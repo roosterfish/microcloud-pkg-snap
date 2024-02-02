@@ -31,7 +31,6 @@ apps:
 
 parts:
   dqlite:
-    build-attributes: [core22-step-dependencies]
     after:
       - raft
     source: https://github.com/canonical/dqlite
@@ -55,7 +54,6 @@ parts:
       - lib/*/libuv*
 
   raft:
-    build-attributes: [core22-step-dependencies]
     source: https://github.com/canonical/raft
     source-tag: v0.18.0
     source-type: git
@@ -77,7 +75,6 @@ parts:
       - lib/*/libuv.so*
 
   microcloud:
-    build-attributes: [core22-step-dependencies]
     source: https://github.com/canonical/microcloud
     source-commit: 4b02c16672e22c41ff7515d10717f373b6a25349 # MicroCloud 1.1
     source-type: git
