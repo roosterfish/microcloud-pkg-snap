@@ -79,7 +79,7 @@ parts:
   microcloud:
     build-attributes: [core22-step-dependencies]
     source: https://github.com/canonical/microcloud
-    source-tag: microcloud-1.1
+    source-tag: 1.1
     source-type: git
     after:
       - dqlite
