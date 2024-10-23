@@ -35,7 +35,7 @@ parts:
     after:
       - raft
     source: https://github.com/canonical/dqlite
-    source-tag: v1.16.0
+    source-tag: v1.17.0 # LTS
     source-type: git
     source-depth: 1
     plugin: autotools
