@@ -4,5 +4,6 @@ This repository contains the snap packaging for [MicroCloud](https://snapcraft.i
 
 The MicroCloud snaps are built for various architectures on Launchpad:
 
-* [`latest/candidate`](https://launchpad.net/~canonical-lxd/microcloud/+snap/microcloud-latest-candidate)
-* [`latest/edge`](https://launchpad.net/~canonical-lxd/microcloud/+snap/microcloud-latest-edge)
+* [`2/candidate`](https://launchpad.net/~canonical-lxd/microcloud/+snap/microcloud-v2-candidate)
+* [`2/edge`](https://launchpad.net/~canonical-lxd/microcloud/+snap/microcloud-v2-edge)
+* [`3/edge` & `latest/edge`](https://launchpad.net/~canonical-lxd/microcloud/+snap/microcloud-latest-edge)
