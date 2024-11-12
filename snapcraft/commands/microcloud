@@ -1,2 +1,10 @@
 #!/bin/sh
-exec microcloud --state-dir "${SNAP_COMMON}/state" "$@"
+MICROCLOUD="microcloud"
+if [ -x "${SNAP_COMMON}/microcloud.debug" ]; then
+    MICROCLOUD="${SNAP_COMMON}/microcloud.debug"
+    GOCOVERDIR="${SNAP_COMMON}/data/cover"
+    export GOCOVERDIR
+    mkdir -p "${GOCOVERDIR}"
+fi
+
+exec "${MICROCLOUD}" --state-dir "${SNAP_COMMON}/state" "$@"
