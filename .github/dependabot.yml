@@ -1,7 +1,16 @@
 version: 2
 updates:
+  # Check the current default edge branch.
   - package-ecosystem: "github-actions"
     directory: "/"
     labels: []
     schedule:
       interval: "weekly"
+
+  # Also check other (non-default) edge branches.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    labels: []
+    schedule:
+      interval: "weekly"
+    target-branch: "v2-edge"
