@@ -84,10 +84,23 @@ parts:
       - bin/microcloud
       - bin/microcloudd
 
+  vim:
+      plugin: nil
+      stage-packages:
+        - vim-tiny
+      override-build: |
+        touch "${CRAFT_PART_INSTALL}/usr/share/vim/vim91/defaults.vim"
+      organize:
+        usr/bin: bin/
+      prime:
+        - bin/vim.tiny
+        - usr/share/vim/vim91/defaults.vim
+
   strip:
     after:
       - dqlite
       - microcloud
+      - vim
     plugin: nil
     override-prime: |
       set -x
