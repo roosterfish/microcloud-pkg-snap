@@ -57,7 +57,7 @@ parts:
 
   microcloud:
     source: https://github.com/canonical/microcloud
-    source-commit: bb68b623f8428b76042f7e63fe411895f92d0c44 # 2.1.0 LTS
+    source-commit: 4b02c16672e22c41ff7515d10717f373b6a25349 # 1.1
     source-type: git
     after:
       - dqlite
