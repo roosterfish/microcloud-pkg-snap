@@ -33,7 +33,8 @@ parts:
   dqlite:
     source: https://github.com/canonical/dqlite
     source-commit: ee1766cba1b52317ba216c0fbddd8457a0241df6 # v1.17.1 LTS
-    source-depth: 1
+    # We often cherry-pick for candidate builds so don't do shallow clone.
+    #source-depth: 1
     source-type: git
     plugin: autotools
     autotools-configure-parameters:
