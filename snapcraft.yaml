@@ -53,6 +53,17 @@ parts:
       - lib/libdqlite*so*
       - lib/*/libuv*
       #- lib/*/liblz4.so*  # use liblz4.so from the base snap
+    override-build: |
+      set -ex
+
+      # Git cherry-picks
+      cd ../src
+      git config user.email "noreply@lists.canonical.com"
+      git config user.name "LXD snap builder"
+
+      git cherry-pick -x b18dfbc3f9f89ed219611e88bad1fa17d1e9e818 # Segfault fix
+
+      craftctl default
 
   microcloud:
     source: https://github.com/canonical/microcloud
