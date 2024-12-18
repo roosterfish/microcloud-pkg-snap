@@ -2,7 +2,7 @@ name: microcloud
 base: core24
 assumes:
  - snapd2.59
-version: "2.1.0"
+version: "1.1.1"
 grade: stable
 source-code: https://github.com/canonical/microcloud.git
 summary: Fully automated private clouds
@@ -54,10 +54,21 @@ parts:
       - lib/libdqlite*so*
       - lib/*/libuv*
       #- lib/*/liblz4.so*  # use liblz4.so from the base snap
+    override-build: |
+      set -ex
+
+      # Git cherry-picks
+      cd ../src
+      git config user.email "noreply@lists.canonical.com"
+      git config user.name "LXD snap builder"
+
+      git cherry-pick -x b18dfbc3f9f89ed219611e88bad1fa17d1e9e818 # Segfault fix
+
+      craftctl default
 
   microcloud:
     source: https://github.com/canonical/microcloud
-    source-commit: 4b02c16672e22c41ff7515d10717f373b6a25349 # 1.1
+    source-commit: 9b6555e5c22d8d1854283750a53d1be96251eecd # 1.1.1
     source-type: git
     after:
       - dqlite
