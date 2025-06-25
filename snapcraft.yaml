@@ -4,7 +4,7 @@ assumes:
  - snapd2.59
 version: "2.1.0"
 grade: stable
-license: AGPL-3.0
+license: AGPL-3.0-only
 
 title: MicroCloud
 summary: Deploy a scalable, low-touch cloud platform in minutes with MicroCloud.
