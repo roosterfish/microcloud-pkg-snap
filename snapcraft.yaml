@@ -4,11 +4,38 @@ assumes:
  - snapd2.59
 version: "2.1.0"
 grade: stable
-source-code: https://github.com/canonical/microcloud.git
-summary: Fully automated private clouds
-description: |-
- Fully automated private clouds.
+license: AGPL-3.0
 
+title: MicroCloud
+summary: Deploy a scalable, low-touch cloud platform in minutes with MicroCloud.
+description: |-
+  MicroCloud creates a lightweight cluster of machines that operates as an open source private cloud. It combines LXD for virtualisation, MicroCeph for distributed storage, and MicroOVN for networking—all automatically configured by the **MicroCloud snap** for reproducible, reliable deployments.
+
+  With MicroCloud, you can eliminate the complexity of manual setup and quickly benefit from high availability, automatic security updates, and the advanced features of its components such as self-healing clusters and fine-grained access control. Cluster members can run full virtual machines or lightweight system containers with bare-metal performance.
+
+  MicroCloud is designed for small-scale private clouds and hybrid cloud extensions. Its efficiency and simplicity also make it an excellent choice for edge computing, test labs, and other resource-constrained use cases.
+
+  **MicroCloud supports single-node deployments, but at least 3 nodes are recommended for high availability.**
+
+  Once the simple bootstrapping is completed, users can launch, run and manage their workloads using system containers or VMs, and otherwise utilize regular LXD functionalities.
+
+  To get started, LXD, MicroCeph, MicroOVN and MicroCloud snaps are needed. Users can install them at once with the command:
+
+  `snap install lxd microceph microcloud microovn`
+
+  The bootstrapping process starts with running
+
+  `microcloud init` on the initiating member
+  and `microcloud join` on the joining members if you're using more than one system.
+
+  Following the simple CLI prompts, a working MicroCloud will be ready within minutes.
+
+contact: lxd@lists.canonical.com
+issues: https://github.com/canonical/microcloud/issues
+source-code: https://github.com/canonical/microcloud
+website:
+  - https://canonical.com/microcloud
+  - https://documentation.ubuntu.com/microcloud/v2-edge/microcloud/
 confinement: strict
 
 apps:
